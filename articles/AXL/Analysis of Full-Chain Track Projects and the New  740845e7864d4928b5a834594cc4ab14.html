@@ -1,0 +1,678 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Analysis of Full-Chain Track Projects and the New Leader Axelar</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="740845e7-864d-4928-b5a8-34594cc4ab14" class="page sans"><header><img class="page-cover-image" src="Analysis%20of%20Full-Chain%20Track%20Projects%20and%20the%20New%20%20740845e7864d4928b5a834594cc4ab14/1500x500.jpg" style="object-position:center 65.25000000000001%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="https://pbs.twimg.com/profile_images/1781326939338190848/HRuLQRBi_400x400.jpg"/></div><h1 class="page-title">Analysis of Full-Chain Track Projects and the New Leader Axelar</h1><p class="page-description"></p></header><div class="page-body"><blockquote id="61560340-542b-45e3-b7d2-df9f04a42e18" class=""><em><strong><span style="border-bottom:0.05em solid">Sincere blessings to the thriving AXL community</span></strong></em></blockquote><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3;margin:0"><strong>1. Prolegomenon</strong></summary><div class="indented"><p id="ae2545fc-a4d2-4a07-a0e0-05897866b3c6" class="">As Ethereum and various public chains continue to develop, the entire crypto market has become highly prosperous, with a variety of technologies emerging and ecosystems proliferating. This has led to varying gas fees for each interaction, prompting the question: <em><strong><span style="border-bottom:0.05em solid">&quot;</span></strong></em><em><mark class="highlight-blue"><strong><span style="border-bottom:0.05em solid">With such a troublesome gas system and numerous public chains, does this really align with our original vision?&quot;</span></strong></mark></em></p><p id="fce60463-fc7f-45a8-a0e3-edf9ef8b12b9" class="">Thus, the full-chain track was born. The full-chain track is a complex concept involving cross-chain, chain abstraction, interoperability, and other related notions. While difficult to explain briefly, we can increase our understanding of this promising track by analyzing specific projects.</p><p id="943c8214-b60b-4ab5-84f3-97c368f2083d" class="">Notably, Axelar has surged<em><strong> 43%</strong></em> in just a few days to become a leading project in this track. Along with a brief overview of other projects, we will focus on analyzing Axelar&#x27;s potential and prospects.</p></div></details><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3;margin:0"><strong>2. Analysis of Comparable Full-Chain Projects</strong></summary><div class="indented"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">2.1 <a href="https://x.com/LayerZero_Labs">LayerZero</a></summary><div class="indented"><p id="abea23bf-4ac3-4154-ab8c-107cc407c065" class="">LayerZero (ZRO) is a full-chain interoperability protocol aiming to bridge the gaps between different blockchain networks. Its primary goal is to enable seamless cross-chain communication, allowing assets and data to move freely across chains.</p><p id="8c33b143-9c2a-4de0-a032-ea1f3b7893d4" class="">This goal is shared by nearly all full-chain projects, which aim to transfer assets and data across different chains—the core purpose of full-chain technology.</p><p id="f0cfb757-13d2-407b-b63e-b9352a09b4af" class="">LayerZero achieves this by leveraging the principles of light nodes, designing an ultra-light node mechanism that divides the trust intermediaries into two parts using relayers and oracles, thereby achieving better security at lower costs.</p><p id="62b26361-907b-436b-a7f3-1dfd8a5d32b6" class="">Light nodes operate without interference from external notaries, relying solely on the chain&#x27;s own security for high decentralization and safety. However, this results in high cross-chain costs, ultimately borne by the user.</p><p id="2d2170da-3b68-402c-bb98-0501c20e5295" class="">To address this, LayerZero&#x27;s ultra-light node design offers a compromise, trading some security for significantly lower costs. Thus, LayerZero itself does not verify messages; instead, the transaction parties ensure security, and contracts and transaction proofs are verified through oracles and relayers, greatly improving efficiency and speed.</p><p id="e13bd3c1-6471-4a19-bc4d-67826b1aee41" class="">LayerZero raised $135 million in a Series A+ round in 2022 and $120 million in a Series B round in 2023, with its native token ZRO now listed on major exchanges.</p></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">2.2 <a href="https://x.com/wormhole">Wormhole</a></summary><div class="indented"><p id="860017df-3f8b-41c7-ac64-ed8468c4cbf8" class="">Wormhole is a leading interoperability platform that supports large-scale multi-chain applications and bridging. The platform aims to connect different blockchains, enabling secure and efficient data and asset transfers.</p><p id="910aefc5-10bc-4451-bc11-b0a966ce5b9d" class="">Wormhole originated as a cross-chain bridge between Ethereum and Solana, consisting of on-chain components (emitters, Wormhole core contracts, and transaction logs) and off-chain components (19 guardian nodes and a message transmission network). Benefiting from Solana&#x27;s prosperity, Wormhole has the highest cross-chain transaction volume.</p><p id="c3214841-7e4b-476d-ba04-82d734575dda" class="">Wormhole prioritizes cross-chain communication and multi-chain development security and integrity through decentralized validation by Guardians. The Guardians Network, a decentralized network of 19 validator nodes, ensures message integrity and security. Additionally, Wormhole utilizes zero-knowledge proofs to establish new message paths, ensuring security.</p><p id="9889dfee-1d24-42cd-b03b-f015ff915fa0" class="">In November 2023, Wormhole raised $225 million in a recent funding round, valuing the project at $2.5 billion, attracting investments from Brevan Howard, Coinbase Ventures, Multicoin Capital, Jump Trading, ParaFi, Dialectic, Borderless Capital, and Arrington Capital. Its native token, W, is now listed on major exchanges.</p></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">2.3 <a href="https://x.com/ParticleNtwrk">Particle Network</a></summary><div class="indented"><p id="23d9a20d-1456-400d-aabf-924b32c48bae" class="">Particle Network has long been a provider of abstract wallets, with deep expertise in this area. Currently, Particle Network aims to develop a Layer1 chain abstraction module, integrating chain abstraction, wallet abstraction, liquidity abstraction, and gas abstraction, allowing users to manage assets from all chains via a single wallet interface.</p><p id="7d76d0c8-9ff5-4ea9-b5f2-73986d86098a" class="">Previously operating behind the scenes as a technical provider, Particle Network now seeks to enter the public eye by promoting its abstract wallet solution, which enhances user experience through a more manageable asset interface.</p><p id="4c213ac8-65d2-43b0-b9b2-5e080aaae157" class="">Particle Network&#x27;s abstract wallet serves as an example of how chain abstraction can simplify user interactions across multiple chains, demonstrating the potential for greater user adoption and satisfaction in the blockchain space.</p></div></details></div></details><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3;margin:0"><strong>3. Analysis of Axelar</strong></summary><div class="indented"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">3.1 <em>ncremental Narrative</em></summary><div class="indented"><p id="9b9bea63-1f17-46db-9855-dee3c361b03b" class="">The previous 20 years were a period of economic boom for the whole world. The development of many emerging technologies, especially the Internet, was changing with each passing day, stirring up the economic market of the whole world. No matter who you are, as long as you catch the spring breeze of the times, you can take off and have a steady stream of wealth. This is the increment. If you keep adding, money will keep making money. Everyone can be satisfied, and naturally there will not be much involution.</p><p id="8fb7902f-0f41-47fe-a2bf-f2c12aca1d2d" class="">But now it is different. It has reached a bottleneck period. Everyone is competing and doing subtraction, so involution has occurred. Even web3, which was not affected much, has gradually fallen into this vortex.</p><p id="bcbb61ec-e469-40a2-af26-d056be4117a3" class="">Therefore, the crypto market also needs to add and adopt incremental narratives to find a way out. The industry closest to the crypto market is RWA (Real World Assets).<em><mark class="highlight-teal"><strong><span style="border-bottom:0.05em solid"> The RWA market has a huge and mature asset target and scale, and is also the comfort zone of Web2 financial giants. It is essentially between Web2 and Web3. At the same time, unlike most of the native crypto assets on the chain, RWA assets are real and regulated by the traditional financial system.</span></strong></mark></em></p><p id="4c6c17db-3116-4b38-8c1a-369de66241d9" class="">The entry point proposed by Axelar is RWA. Through the channel of Axelar, RWA assets can be put on the chain and made more easily accepted by traditional financial institutions, thus becoming a good entry channel. Therefore, for the entire Web3 world, Axelar&#x27;s new full-chain approach for RWA and traditional Web2 mainstream institutions has extremely practical significance, and it may be a huge innovation for the large-scale adoption of Web3.</p><p id="3808b9ab-f4fa-4943-9ffc-c4cb7d229cb2" class="">It is in this context that Axelar, which focuses on the funds and users of traditional institutions, can be selected by Deutsche Bank, a traditional financial giant, to cooperate. This has also become Axelar&#x27;s exclusive competitive advantage.</p><p id="23c48e5f-6728-4eaf-8e5b-4670ff9f253e" class="">In addition, Centrifuge, a pioneer in RWA, has already integrated Axelar&#x27;s cross-chain solution and used Axelar&#x27;s interoperability layer as the underlying infrastructure. AXL has also been selected twice in the &quot;Project Guardian&quot; announced by the Monetary Authority of Singapore (MAS).</p><p id="2bdc1d6a-4120-498f-b42c-fd1c164ace39" class="">As the underlying infrastructure, Axelar can provide innovative support for traditional financial giants to enter tokenized investment, and Axelar will also directly benefit from the hundreds of billions of dollars of untokenized liquidity in the traditional financial system, which will be introduced to the chain in the form of RWA (Real World Assets) through Axelar&#x27;s full-chain architecture, completely releasing its liquidity.</p><p id="a01d97c6-71a7-4d0f-8f19-323091ddd3bb" class="">The competition for existing stocks is becoming more and more inward-looking, and the battle for incremental funds and users is the key to the long-term competition in the entire chain track. For Axelar, helping traditional financial giants such as Deutsche Bank and JPMorgan Chase to enter Web3 is undoubtedly a key node to break through the large-scale adoption of Web3, and it is also its unique advantage that cannot be copied.</p></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">3.2<em>Cross-chain interoperability</em></summary><div class="indented"><p id="48d7c8ec-132f-41c7-82ab-aa78b23c4062" class=""><strong>Axelar</strong> is a cross-chain interoperability project based on cross-chain technology. On top of the concepts of cross-chain and multi-chain, it proposes the concept of inter-chain, and is committed to providing a unified development environment for all Web3 applications.</p><p id="a9143aa8-cddb-4db8-8648-b6628347eb4d" class="">To this end, in 2024, Axelar developed the<em><strong><span style="border-bottom:0.05em solid"> Axelar Virtual Machine (AVM) </span></strong></em>and launched a number of development tools, allowing Axelar to evolve from a cross-chain layer responsible for message and asset delivery to a cross-chain layer that can program and deploy smart contracts to perform more complex operations.</p><p id="6e812fe9-87cf-4ae8-a6ad-79379d1e6cdf" class="">To some extent, Axelar&#x27;s inter-chain concept is an upgrade of the cross-chain and multi-chain concepts.<mark class="highlight-brown"> </mark><em><mark class="highlight-brown"><strong><span style="border-bottom:0.05em solid">Its core is to take advantage of the Axelar network and use the Axelar network as a central interaction node in a multi-chain network. By developing and deploying applications in this central node and then expanding to other networks</span></strong></mark></em><em><strong>,</strong></em>  it can greatly improve efficiency and reduce costs, and for users, it will also have a smoother user experience.</p><p id="b9d82bca-cd98-437e-9f3b-cd0ee7fa3072" class="">In terms of cross-chain solutions, Axelar chose a &quot;trinity&quot; cross-chain layer with gateways as points, validators as lines, and Axelar network as surfaces as a cross-chain solution. Among them:</p><p id="6f5638a0-5acd-4584-aeaa-6f0dc6311981" class=""><em><mark class="highlight-blue"><strong><span style="border-bottom:0.05em solid">The gateway is mainly responsible for communication and cross-chain execution functions</span></strong></mark></em><mark class="highlight-blue">. </mark>On the source chain initiated by the cross-chain, the gateway is responsible for initiating the corresponding request, and on the target chain received by the cross-chain, the gateway is responsible for receiving and executing the corresponding message to complete the cross-chain operation. </p><p id="03deb631-fdb0-4e97-b3b6-eecce685f427" class="">On the EVM chain, the gateway exists in the form of a smart contract, while on Cosmos and other non-EVM chains, the gateway exists in the form of a Dapp. The multi-signature key that controls the gateway is jointly held by all validators. The share of the shared key held by each validator is determined by the number of AXL tokens staked by it. The key will only take effect when the share of the key submitted by the validator who confirms the message exceeds the threshold.</p><p id="82eddbbe-659a-423f-ad06-99eb51923f99" class="">The cross-chain messages sent by users on each chain will first interact with the gateway. After receiving the message, the gateway will generate an event in the background, and then the <strong>relay</strong> will pick up these events and submit them to the Axelar network for processing.</p><p id="329df506-cdf7-4e18-8d2b-2c4e52e89f0f" class=""><em><mark class="highlight-blue"><strong><span style="border-bottom:0.05em solid">The validator is mainly responsible for message verification and network consensus.</span></strong></mark></em> When a cross-chain event is submitted to the Axelar network, the validator node will start working, querying its RPC port on the source chain node to check whether the submitted event can be observed, and then confirming the existence of the event and voting to approve the event as legal. The validator will then package these events into blocks and confirm these blocks through the proof-of-stake consensus.</p><p id="ed830818-dfbf-4f63-b721-7fa1a10cb0c5" class="">The Axelar network is mainly responsible for processing all cross-chain requests and paying the corresponding Gas fees. In this process, Axelar needs to use the tokens on the target chain to pay the Gas fee.</p><p id="53a6989e-5215-42d8-b195-13388b1b2771" class="">In order to facilitate the use of users, so that they do not need to prepare tokens on the target chain and Axelar to pay the Gas fee, <em><mark class="highlight-orange"><strong><span style="border-bottom:0.05em solid">Axelar created and deployed a smart contract called Gas Receiver. The Gas Receiver contract estimates the total gas fee required on the source chain, Axelar network and target chain, charges the user the native token on the source chain as the gas fee at one time, and then converts these native tokens into AXL, target chain tokens and other required tokens to complete the gas fee payment on behalf of the user.  </span></strong></mark></em>In this process, the Gas Receiver generally charges more tokens than the actual payment amount, and returns the excess gas fee to the user&#x27;s account after the transaction is completed.</p><p id="9c16afc5-644a-43da-9c7d-05a6eabcc37e" class="">Such an operation can make the user experience very smooth, greatly coordinate the gas of the entire chain, and make unified use of it. If it can be achieved, it will be a huge breakthrough.</p><figure id="ec2b8d6d-19af-4b7e-b9b1-2fab709d9998" class="image"><a href="Analysis%20of%20Full-Chain%20Track%20Projects%20and%20the%20New%20%20740845e7864d4928b5a834594cc4ab14/a118f41fce870bb4bcd5301c311e2f8d.png"><img style="width:624px" src="Analysis%20of%20Full-Chain%20Track%20Projects%20and%20the%20New%20%20740845e7864d4928b5a834594cc4ab14/a118f41fce870bb4bcd5301c311e2f8d.png"/></a></figure></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">3.3<em>Security and Scalability</em></summary><div class="indented"><p id="cd756821-1173-444d-9dcb-a44a79995bfb" class=""><em><mark class="highlight-blue"><strong>Axelar&#x27;s security is mainly guaranteed by multi-signature keys and the network consensus layer. </strong></mark></em><em><strong> </strong></em>In short, <strong>Axelar</strong> needs to reach a certain number of nodes to confirm the authenticity at the same time when transmitting cross-chain information and performing cross-chain operations in order to be judged as valid, and the gateway can play a role.</p><p id="6328e91c-5134-4771-b901-2f6e13a69957" class="">In addition, when all cross-chain events are packaged, they need to be confirmed by the Delegated Proof of Stake (DPoS) consensus mechanism before a new block can be generated.</p><p id="9d96d153-f54b-4005-a931-7a9b4dab7e22" class="">At the same time, in order to reduce the risk of voting rights being concentrated in a few stakeholders due to different AXL staked shares, Axelar also introduced the <em><strong>&quot;square voting&quot;</strong></em> mechanism at the consensus level, that is, when a validator votes, it needs to stake one unit of AXL tokens to obtain one share of voting rights, but if it needs to obtain two shares of voting rights, it needs to stake two squares, that is, four units of AXL tokens, <em><strong>and so on. The token shares owned by the validator node need to be squared before the corresponding number of voting rights can be obtained. </strong></em></p><p id="20452e4d-2832-4737-a6c7-1c04e573f049" class="">After limiting the validator nodes with high stakes, the network&#x27;s decentralization has been further improved.</p><p id="2e83683f-13d6-4e48-8c9f-2cb12f63881d" class="">The existence of the above two mechanisms ensures that Axelar has better security than common cross-chain bridges.</p><p id="dbb83af4-60e4-4c35-bd7a-6877a2b9f64b" class=""><mark class="highlight-orange"><strong>In terms of scalability, Axelar, as a public chain, can execute smart contracts, which is already very important. </strong></mark></p><p id="d9d34ac8-e627-4f22-85e6-1ef95099980e" class="">This means that Axelar can integrate with other public chains and Dapps more conveniently, quickly and at low cost, and even act as their &quot;cross-chain layer&quot; in the concept of modular blockchain to help these projects complete cross-chain operations, while also effectively improving the user experience.</p><p id="64fce0d9-97f4-4c4d-89f8-a5ae802f917e" class="">For example, an API released by Axelar can help the integrated Dapp generate a one-time deposit address, <em><strong>These addresses can receive cross-chain funds of any token from any wallet on any integrated chain, allowing users to get an interactive experience no less than that of centralized exchanges during the cross-chain process.</strong></em></p><p id="8d521882-7bcf-4ad1-8832-6f560f503ca5" class="">Secondly, by expanding the General Message Passing (GMP) function, Axelar can not only realize cross-chain assets, but also support complex cross-chain function calls and cross-chain state synchronization, which greatly improves the scalability of Dapps that cooperate with Axelar.</p></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">3.4<em>On-chain data and financing</em></summary><div class="indented"><p id="e461bca4-a1db-4a05-a399-649e1ec71d7b" class="">According to Axelar&#x27;s block browser, as of 23:00 on July 18, 2024, <em><strong>Axelar generated a total of 2,171,081 transactions, of which 1.59M were GMP (General Message Passing) transactions, accounting for about 73.23%</strong></em>.</p><p id="f42f0654-3f47-470e-9ab2-a653052afe8b" class="">GMP transactions are mainly used to call smart contracts on other chains connected by Axelar on one chain. The difference between them and ordinary cross-chain transactions is that the designated object is a smart contract, while ordinary cross-chain transactions are only responsible for transferring an asset from the source chain account to the target chain account. Therefore, after 2023, the rapid increase in the number of GMP transactions reflects the continuous improvement and activeness of Axelar&#x27;s cross-chain ecology.</p><p id="50b00503-d517-4b58-8405-db2388b9e330" class="">In addition, since 2023, the number of active users of Axelar has also increased significantly, and has remained relatively stable in the future, which reflects that Axelar has a good user ecological stickiness.</p><p id="afe611fd-25ab-40fe-b9f2-e299ea9b2639" class="">Since 2023, Axelar has seen a significant increase in active users, maintaining steady growth and showcasing strong user retention.</p><h3 id="a670d8a8-ba0f-459e-970d-9b95cbf0c0f3" class="">Key Partnerships and Milestones</h3><ul id="2fa061cf-38ef-4ae3-961c-96b3d584de49" class="bulleted-list"><li style="list-style-type:disc"><strong>June 16, 2023</strong>: <mark class="highlight-yellow"><strong>Uniswap Foundation </strong></mark>endorsed Axelar for specific use cases, highlighting its decentralized nature with 75 nodes, robust security practices, and a versatile message-passing mechanism.</li></ul><ul id="e27e9de6-c0a9-43d3-a112-32017c1fc752" class="bulleted-list"><li style="list-style-type:disc"><strong>June 23, 2023</strong>: Axelar became the official cross-chain bridge for <mark class="highlight-yellow"><strong>Filecoin</strong></mark><mark class="highlight-default"><strong>,</strong></mark> enhancing liquidity for DEX and AMM on FVM.</li></ul><ul id="a8b09787-6563-4552-93cb-6e81aade8e87" class="bulleted-list"><li style="list-style-type:disc"><strong>July 11, 2023</strong>: Partnership with <mark class="highlight-yellow"><strong>Microsoft </strong></mark>to offer cross-chain services through Azure Marketplace.</li></ul><ul id="e279a4c4-721a-46da-a4af-9689c574e1b6" class="bulleted-list"><li style="list-style-type:disc"><strong>September 12, 2023</strong>: <mark class="highlight-yellow"><strong>Squid</strong></mark> implemented direct token swaps between Ethereum, various EVM-compatible chains, and the Cosmos ecosystem.</li></ul><ul id="16f893bf-0a3c-4fe4-8997-0ca3204cefcf" class="bulleted-list"><li style="list-style-type:disc"><strong>September 14, 2023</strong>: Collaboration with <mark class="highlight-yellow"><strong>Lido</strong></mark> and Neutron to launch wstETH on Cosmos, providing liquidity via Neutron and Axelar.</li></ul><ul id="c8c2e892-e19b-4425-94f7-acba33942ab5" class="bulleted-list"><li style="list-style-type:disc"><strong>November 13, 2023</strong>:<mark class="highlight-yellow"><strong> Ondo Finance </strong></mark>launched Ondo Bridge in partnership with Axelar, allowing USDY issuance on any Axelar-integrated chain.</li></ul><ul id="013d3258-5c3a-4436-8cbc-7e2cb0af53d6" class="bulleted-list"><li style="list-style-type:disc"><strong>November 15, 2023</strong>: Strategic partnerships with<mark class="highlight-yellow"><strong> JPMorgan and Apollo</strong></mark>.</li></ul><ul id="3000454f-53ba-4f38-bc16-f658facebe92" class="bulleted-list"><li style="list-style-type:disc"><strong>November 21, 2023</strong>: <mark class="highlight-yellow"><strong>Frax </strong></mark>approved a proposal to use Axelar for expanding new chains.</li></ul><ul id="1ffe6f80-51f3-4555-85ad-3bd4677519d1" class="bulleted-list"><li style="list-style-type:disc"><strong>December 14, 2023</strong>: Integration with <mark class="highlight-yellow"><strong>Vertex</strong></mark>, becoming the fourth major DEX project to incorporate Axelar after dYdX, Uniswap, and Pancakeswap.</li></ul><p id="a2850878-f5de-4a86-9c97-9783a75b300e" class="">These partnerships underscore Axelar&#x27;s promising future, validating its approach and potential for widespread adoption.</p><p id="df493e35-c2d3-4fb8-b0c1-238d58f4192a" class=""><em><strong>Currently, Axelar has integrated 66 chains, completed multiple funding rounds with a total raise of $113.8 million, and attracted investors such as Binance, Polychain Capital, Coinbase Ventures, Dragonfly Capital, and </strong></em><em><strong><a href="http://crypto.com/">Crypto.com</a></strong></em><em><strong> Capital.</strong></em></p></div></details></div></details><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3;margin:0"><strong>4. Conclusion</strong></summary><div class="indented"><p id="350b7098-0641-4d87-b520-3a310dc7e93e" class="">The full-chain and cross-chain interoperability track is still developing, with substantial potential for growth as the market expands. The increasing number of public chains will drive demand for cross-chain solutions.</p><p id="1e076515-af15-4694-b26d-35d9cd06cf9c" class="">Axelar&#x27;s proposed solutions and &quot;inter-chain&quot; concepts offer significant scalability advantages. Additionally, its strategic collaboration with Web2 giants and RWA projects presents a unique approach. If this concept attracts more projects and develops into a thriving ecosystem, Axelar will likely soar, leveraging its top-tier security and extensive scalability.</p><p id="ab8c3ff4-544c-4fa5-bcc8-18584926c814" class=""><em><mark class="highlight-red"><strong><span style="border-bottom:0.05em solid">Currently, Axelar serves as the liquidity gateway between the Cosmos ecosystem and EVM chains. In the future, it is poised to become the gateway for the entire cryptocurrency market.</span></strong></mark></em></p></div></details><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3;margin:0"><strong>5. References</strong></summary><div class="indented"><ol type="1" id="7b1e3855-bf3f-4bc7-b600-586777648f87" class="numbered-list" start="1"><li><a href="https://foresightnews.pro/article/detail/53136">Why Axelar is the most market-aligned full-chain protocol</a></li></ol><ol type="1" id="88f0202f-838f-423b-8d3f-388449b78864" class="numbered-list" start="2"><li><a href="https://foresightnews.pro/article/detail/55714">First-tier Research Report: Axelar Cross-chain Interoperability Project</a></li></ol><ol type="1" id="c8dcc356-1558-4cc6-ab25-9960df56db70" class="numbered-list" start="3"><li><a href="https://foresightnews.pro/article/detail/62747">Beyond Airdrops: Axelar&#x27;s Full-chain Endgame Hidden Behind RWA</a></li></ol><ol type="1" id="20fddefc-59f5-4361-848a-de2524217d0a" class="numbered-list" start="4"><li><a href="https://axelarscan.io/">Data Source: Axelar Explorer</a></li></ol></div></details><hr id="91b072a3-c53b-48c5-9933-8add1bfe2caa"/><p id="9574ea9a-052d-40f2-bd2d-1714bf797aed" class=""><mark class="highlight-yellow">—————————————   </mark><em><mark class="highlight-yellow"><strong> Thank you for your reading~</strong></mark></em><mark class="highlight-yellow">    ———————————————</mark></p><hr id="6930627c-17ac-4c39-b710-bb4b3c9bccfa"/><p id="8b252dc7-230b-47c0-826f-de7b622bc5f7" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"><hr/><details open="" style="padding-top:1em"><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Inline comments</summary><div class="indented"><div><ul class="toggle"><li><div><span class="user" style="padding:0.2em"><span class="icon text-icon user-icon"><span class="user-icon-inner">a</span></span><span><b>awan Smith</b> <time style="font-size:0.8em">Jul 19, 2024, 5:21 PM</time></span></span></div><div style="padding:0.2em">Technology Stack</div><div style="padding:0.3em"></div></li></ul></div><hr/></div></details></span></body></html>
