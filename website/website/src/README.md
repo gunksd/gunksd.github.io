@@ -1,13 +1,13 @@
 ---
 home: true
 icon: home
-title: Project home
-heroImage: https://theme-hope-assets.vuejs.press/logo.svg
-bgImage: https://theme-hope-assets.vuejs.press/bg/6-light.svg
-bgImageDark: https://theme-hope-assets.vuejs.press/bg/6-dark.svg
+title: Awan's secret home
+heroImage: https://github.com/gunksd/img/blob/main/runesgirl(blue).jpg?raw=true
+bgImage: https://github.com/gunksd/img/blob/main/profile(default).png?raw=true
+bgImageDark: https://github.com/gunksd/img/blob/main/eth.jpg?raw=true
 bgImageStyle:
   background-attachment: fixed
-heroText: Project name
+heroText: 
 tagline: You can place the description of the project here.
 actions:
   - text: How to Use
