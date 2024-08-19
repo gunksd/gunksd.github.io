@@ -15,19 +15,21 @@ export default hopeTheme({
 
   logo: "/4.png",
 
-  repo: "vuepress-theme-hope/vuepress-theme-hope",
+  repo: "https://github.com/gunksd/gunksd.github.io",
 
   docsDir: "src",
+
+  fullscreen: true,
 
   locales: {
     "/": {
       // navbar
       navbar: zhNavbar,
-
+      
       // sidebar
       sidebar: zhSidebar,
 
-      footer: "默认页脚",
+      footer: "愿你昼夜不舍,忠于自己",
 
       displayFooter: true,
 
@@ -36,11 +38,16 @@ export default hopeTheme({
         editLink: "在 GitHub 上编辑此页",
       },
     },
+
+    "/zh-CN/": {
+      // enable RTL 
+      rtl: true,
+    },
   },
 
   encrypt: {
     config: {
-      "/zh/demo/encrypt.html": ["1234"],
+      "/projects/Rooch.html": ["2580"],
     },
   },
 
@@ -54,7 +61,7 @@ export default hopeTheme({
       category: "Announcements",
       categoryId: "DIC_kwDOG_Pt2M4COD69",
     },
-
+    
     components: {
       components: ["Badge", "VPCard"],
     },
@@ -91,6 +98,7 @@ export default hopeTheme({
       tabs: true,
       tasklist: true,
       vPre: true,
+      
 
       // Install chart.js before enabling it
       // chart: true,

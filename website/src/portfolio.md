@@ -6,7 +6,6 @@ icon: home
 welcome: Hi，很高兴认识你呀！
 name: 我是【Awan】!
 avatar: /se.jpg
-
 titles:
   - 愿你昼夜不舍, 忠于自己！
 

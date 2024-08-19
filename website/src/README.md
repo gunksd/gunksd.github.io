@@ -13,7 +13,7 @@ tagline: 起舞弄清影，何似在人间。
 actions:
   - text: 开始阅读
     icon: lightbulb
-    link: /notes/
+    link: /projects/Rooch.md
     type: primary
 
   - text: 关于我
@@ -40,9 +40,26 @@ features:
     details: 一些半成品和烂摊子
     link: /projects/
 
- 
- 
+  - title: 推特
+    icon: user
+    details: 没有啦，看的都是正经的~
+    link: https://x.com/wnyn12075574
 
+  - title: Github
+    icon: code-branch
+    details: 每天都要绿化一下下（才不是水！）
+    link: https://github.com/gunksd
+
+  - title: 微信
+    icon: message
+    details: 加个V呗！（搓手手）
+    link: https://raw.githubusercontent.com/gunksd/img/main/wechat.jpg
+
+  - title: Telegram
+    icon: paper-plane
+    details: 咳咳，你懂的
+    link: https://t.me/Halenxiaoxiao
+  
 copyright: false
 footer: false
 ---
