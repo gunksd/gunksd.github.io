@@ -21,7 +21,7 @@ export default hopeTheme({
 
   fullscreen: true,
 
-  favicon: "/public/favicon.ico",
+  favicon: "/favicon.ico",
 
   locales: {
     "/": {

@@ -53,7 +53,7 @@ features:
   - title: 微信
     icon: message
     details: 加个V呗！（搓手手o(´^｀)o）
-    link: https://raw.githubusercontent.com/gunksd/img/main/wechat.jpg
+    link: /wechat.jpg
 
   - title: Telegram
     icon: paper-plane
