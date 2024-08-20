@@ -4,7 +4,7 @@ import { zhNavbar } from "./navbar/index.js";
 import { zhSidebar } from "./sidebar/index.js";
 
 export default hopeTheme({
-  hostname: "https://vuepress-theme-hope-docs-demo.netlify.app",
+  hostname: "https://gunksd.github.io/",
 
   author: {
     name: "Awan's website",
@@ -56,10 +56,10 @@ export default hopeTheme({
     // You MUST generate and use your own comment service in production.
     comment: {
       provider: "Giscus",
-      repo: "vuepress-theme-hope/giscus-discussions",
-      repoId: "R_kgDOG_Pt2A",
+      repo: "gunksd/Giscus",
+      repoId: "R_kgDOMlspdw",
       category: "Announcements",
-      categoryId: "DIC_kwDOG_Pt2M4COD69",
+      categoryId: "DIC_kwDOMlspd84Chyvi",
     },
     
     components: {
@@ -89,7 +89,7 @@ export default hopeTheme({
       playground: {
         presets: ["ts", "vue"],
       },
-      
+
       stylize: [
         {
           matcher: "Recommended",

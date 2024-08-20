@@ -15,5 +15,13 @@
     "vue": "^3.4.31",
     "vuepress": "2.0.0-rc.14",
     "vuepress-theme-hope": "2.0.0-rc.52"
+  },
+  "dependencies": {
+    "@vue/repl": "^4.3.1",
+    "chart.js": "^4.4.3",
+    "echarts": "^5.5.1",
+    "flowchart.ts": "^3.0.0",
+    "katex": "^0.16.11",
+    "mermaid": "^10.9.1"
   }
 }
