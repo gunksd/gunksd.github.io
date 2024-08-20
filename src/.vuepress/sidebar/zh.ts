@@ -58,5 +58,10 @@ export const zhSidebar = sidebar({
       icon: "person-rays",
       link: "/aboutme.md",
     },
+    {
+      text: "Sponsor",
+      icon: "mug-hot",
+      link: "/sponsor/coffee.md",
+    },
   ],
 });

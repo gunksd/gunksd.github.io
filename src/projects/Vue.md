@@ -5,6 +5,7 @@ title: Vue Diary
 icon: laptop-code
 # 这是侧边栏的顺序
 order: 3
+tag: Vue
 # 设置作者
 author: Awan
 # 设置写作时间

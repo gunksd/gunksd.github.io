@@ -67,6 +67,11 @@ export const zhNavbar = navbar([
         link: "https://solidity-by-example.org/"
       },
     ]
-  }
+  },
+  {
+    text: "Sponsor Me",
+    icon: "mug-hot", 
+    link: "/sponsor/coffee.md",  
+  },
 
 ]);

@@ -52,14 +52,19 @@ features:
 
   - title: 微信
     icon: message
-    details: 加个V呗！（搓手手）
+    details: 加个V呗！（搓手手o(´^｀)o）
     link: https://raw.githubusercontent.com/gunksd/img/main/wechat.jpg
 
   - title: Telegram
     icon: paper-plane
     details: 咳咳，你懂的
     link: https://t.me/Halenxiaoxiao
-  
+
+  - title: Treat me to a coffee. (✪ω✪)
+    icon: mug-hot
+    details: 请我喝杯咖啡肿么样？
+    link: /sponsor/coffee.md
+    
 copyright: false
 footer: true
 ---

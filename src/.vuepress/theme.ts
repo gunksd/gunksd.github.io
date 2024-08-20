@@ -7,7 +7,7 @@ export default hopeTheme({
   hostname: "https://gunksd.github.io/",
 
   author: {
-    name: "Awan's website",
+    name: "Awan",
     url: "https://gunksd.github.io",
   },
 

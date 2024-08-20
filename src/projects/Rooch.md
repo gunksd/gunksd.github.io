@@ -5,10 +5,9 @@ title: Pocket-Monsters-On-Rooch
 icon: tree
 # 这是侧边栏的顺序
 order: 3
-# 设置作者
-author: Awan
 # 设置写作时间
 date: 2024-08-18
+tag: Rooch
 ---
 # Pocket Monsters On Rooch
 
