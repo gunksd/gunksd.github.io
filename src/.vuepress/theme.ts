@@ -54,8 +54,8 @@ export default hopeTheme({
   },
 
   plugins: {
-    // Note: This is for testing ONLY!
-    // You MUST generate and use your own comment service in production.
+
+
     comment: {
       provider: "Giscus",
       repo: "gunksd/Giscus",
@@ -63,7 +63,7 @@ export default hopeTheme({
       category: "Announcements",
       categoryId: "DIC_kwDOMlspd84Chyvi",
     },
-    
+
     components: {
       components: ["Badge", "VPCard"],
     },
@@ -111,7 +111,8 @@ export default hopeTheme({
       tasklist: true,
       vPre: true,
       vuePlayground: true,
-
+      
+    },
       // Install chart.js before enabling it
       // chart: true,
 
@@ -149,7 +150,7 @@ export default hopeTheme({
 
       // Install sandpack-vue3 before enabling it
       // sandpack: true,
-    },
+
 
     // Install @vuepress/plugin-pwa and uncomment these if you want a PWA
     // pwa: {

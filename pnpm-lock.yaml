@@ -26,6 +26,9 @@ importers:
       mermaid:
         specifier: ^10.9.1
         version: 10.9.1
+      vuepress-plugin-player:
+        specifier: ^1.1.8
+        version: 1.1.8
     devDependencies:
       '@vuepress/bundler-vite':
         specifier: 2.0.0-rc.14
@@ -36,6 +39,9 @@ importers:
       vuepress:
         specifier: 2.0.0-rc.14
         version: 2.0.0-rc.14(@vuepress/bundler-vite@2.0.0-rc.14(@types/node@22.4.1)(sass@1.77.8))(vue@3.4.38)
+      vuepress-plugin-musicplayer:
+        specifier: ^1.2.3
+        version: 1.2.3
       vuepress-theme-hope:
         specifier: 2.0.0-rc.52
         version: 2.0.0-rc.52(@vue/repl@4.3.1)(chart.js@4.4.3)(echarts@5.5.1)(flowchart.ts@3.0.0)(katex@0.16.11)(markdown-it@14.1.0)(mermaid@10.9.1)(vuepress@2.0.0-rc.14(@vuepress/bundler-vite@2.0.0-rc.14(@types/node@22.4.1)(sass@1.77.8))(vue@3.4.38))
@@ -854,6 +860,9 @@ packages:
     peerDependencies:
       postcss: ^8.1.0
 
+  axios@0.21.4:
+    resolution: {integrity: sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==}
+
   balloon-css@1.2.0:
     resolution: {integrity: sha512-urXwkHgwp6GsXVF+it01485Z2Cj4pnW02ICnM0TemOlkKmCNnDLmyy+ZZiRXBpwldUXO+aRNr7Hdia4CBvXJ5A==}
 
@@ -1239,6 +1248,15 @@ packages:
     resolution: {integrity: sha512-yD+0wVJHvV6SutpNpao5S0hQp+7tnPuETtPORIodGEuUAP8LzegVVSUy+NFDWU9pUO2F1E+PikBD83PddoCfnw==}
     engines: {node: ^18.0.0 || >= 20}
 
+  follow-redirects@1.15.6:
+    resolution: {integrity: sha512-wWN62YITEaOpSK584EZXJafH1AGpO8RVgElfkuXbTOrPX4fIfOyEpW/CsiNd8JdYrAoOvafRTOEnvsO++qCqFA==}
+    engines: {node: '>=4.0'}
+    peerDependencies:
+      debug: '*'
+    peerDependenciesMeta:
+      debug:
+        optional: true
+
   fraction.js@4.3.7:
     resolution: {integrity: sha512-ZsDfxO51wGAXREY55a7la9LScWpwv9RxIrYABrlvOFBlH/ShPnrtsXeuUIfXKKOVicNxQ+o8JTbJvjS4M89yew==}
 
@@ -1355,6 +1373,9 @@ packages:
 
   isexe@2.0.0:
     resolution: {integrity: sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==}
+
+  jquery@3.7.1:
+    resolution: {integrity: sha512-m4avr8yL8kmFN8psrbFFFmB/If14iN5o9nw/NgnnM+kybDJpRsAynV2BsfpTYrTRysYUdADVD7CkUUizgkpLfg==}
 
   js-yaml@3.14.1:
     resolution: {integrity: sha512-okMH7OXXJ7YrN9Ok3/SXrnu4iX9yOk+25nqX4imS2npuvTYDmo/QEZoqwZkYaIDk3jVvBOTOIEgEhaLOynBS9g==}
@@ -1965,6 +1986,12 @@ packages:
         optional: true
       sass-loader:
         optional: true
+
+  vuepress-plugin-musicplayer@1.2.3:
+    resolution: {integrity: sha512-wz8mi6uy39/aepkv0/4KpvBDcLIWLUh8YHWGyQAeIzaGS6E5Zinhf++XKU1bpey42GhGIXDAr13ATQer1bWogQ==}
+
+  vuepress-plugin-player@1.1.8:
+    resolution: {integrity: sha512-rkLZCjDz7NDTDkx2xUBNLaI1rJzPcz/9qs1OiAkirPU//CHldoPlh8scQoeCFZk3dpjc1+Ek/J9HH7zKdIux0A==}
 
   vuepress-shared@2.0.0-rc.52:
     resolution: {integrity: sha512-/Y5Qpl8ueqiggqFAyeJ9U2PhLyE7O5hl3r1k4vER/gKpaeYIqmPxf0ToJMFa3uc4luoNEe/9NJb6LJCrcPjFEA==}
@@ -2895,6 +2922,12 @@ snapshots:
       postcss: 8.4.41
       postcss-value-parser: 4.2.0
 
+  axios@0.21.4:
+    dependencies:
+      follow-redirects: 1.15.6
+    transitivePeerDependencies:
+      - debug
+
   balloon-css@1.2.0: {}
 
   bcrypt-ts@5.0.2: {}
@@ -3331,6 +3364,8 @@ snapshots:
       raphael: 2.3.0
       tslib: 2.6.3
 
+  follow-redirects@1.15.6: {}
+
   fraction.js@4.3.7: {}
 
   fs-extra@11.2.0:
@@ -3427,6 +3462,8 @@ snapshots:
   is-unicode-supported@2.0.0: {}
 
   isexe@2.0.0: {}
+
+  jquery@3.7.1: {}
 
   js-yaml@3.14.1:
     dependencies:
@@ -4060,6 +4097,16 @@ snapshots:
       - '@vue/composition-api'
       - markdown-it
       - typescript
+
+  vuepress-plugin-musicplayer@1.2.3:
+    dependencies:
+      jquery: 3.7.1
+
+  vuepress-plugin-player@1.1.8:
+    dependencies:
+      axios: 0.21.4
+    transitivePeerDependencies:
+      - debug
 
   vuepress-shared@2.0.0-rc.52(vuepress@2.0.0-rc.14(@vuepress/bundler-vite@2.0.0-rc.14(@types/node@22.4.1)(sass@1.77.8))(vue@3.4.38)):
     dependencies:
