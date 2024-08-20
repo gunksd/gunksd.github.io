@@ -21,6 +21,8 @@ export default hopeTheme({
 
   fullscreen: true,
 
+  favicon: "/public/favicon.ico",
+
   locales: {
     "/": {
       // navbar
