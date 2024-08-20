@@ -61,5 +61,5 @@ features:
     link: https://t.me/Halenxiaoxiao
   
 copyright: false
-footer: false
+footer: true
 ---

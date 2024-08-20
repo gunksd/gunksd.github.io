@@ -7,7 +7,7 @@ export default hopeTheme({
   hostname: "https://vuepress-theme-hope-docs-demo.netlify.app",
 
   author: {
-    name: "Awan",
+    name: "Awan's website",
     url: "https://gunksd.github.io",
   },
 
@@ -29,7 +29,7 @@ export default hopeTheme({
       // sidebar
       sidebar: zhSidebar,
 
-      footer: "愿你昼夜不舍,忠于自己",
+      footer: "愿你昼夜不舍,忠于自己!",
 
       displayFooter: true,
 
@@ -70,16 +70,26 @@ export default hopeTheme({
     mdEnhance: {
       align: true,
       attrs: true,
+      chart: true,
       codetabs: true,
       component: true,
       demo: true,
+      echarts: true,
       figure: true,
+      flowchart: true,
+      gfm: true,
       imgLazyload: true,
       imgSize: true,
       include: true,
+      katex: true,
       mark: true,
+      mermaid: true,
       plantuml: true,
       spoiler: true,
+      playground: {
+        presets: ["ts", "vue"],
+      },
+      
       stylize: [
         {
           matcher: "Recommended",
@@ -98,7 +108,7 @@ export default hopeTheme({
       tabs: true,
       tasklist: true,
       vPre: true,
-      
+      vuePlayground: true,
 
       // Install chart.js before enabling it
       // chart: true,
