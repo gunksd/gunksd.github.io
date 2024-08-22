@@ -61,11 +61,12 @@ features:
     details: 咳咳，你懂的
     link: https://t.me/Halenxiaoxiao
 
-  - title: Treat me to a coffee. (✪ω✪)
-    icon: mug-hot
-    details: 请我喝杯咖啡肿么样？
-    link: /sponsor/coffee.md
-    
-copyright: false
-footer: true
+copyright: <a href="/sponsor/coffee.md" class="coffee-link">
+             请我喝杯咖啡肿么样？(✪ω✪)
+           </a>
+footer: 愿你昼夜不舍, 忠于自己!
+
+
+
+
 ---

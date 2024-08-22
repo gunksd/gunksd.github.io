@@ -1,5 +1,52 @@
-// place your custom styles here
-// 在导航栏中将站点名称改为斜体
+/* 在导航栏中将站点名称改为斜体 */
 .site-name {
-    font-style: italic;
+  font-style: italic;
+}
+
+/* 背景渐变动画 */
+@keyframes gradientAnimation {
+  0%, 100% {
+    background-position: 0% 50%;
   }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* 文字闪烁效果 */
+@keyframes textFlicker {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* coffee-link 样式 */
+.coffee-link {
+  background: linear-gradient(45deg, #FF3CAC, #784BA0, #2B86C5, #FFE47A); /* 添加了背景渐变 */
+  background-size: 200% 200%;
+  -webkit-background-clip: text; /* For Safari and Chrome */
+  background-clip: text; /* Standard property */
+  color: transparent;
+  font-weight: bold;
+  text-decoration: none;
+  animation: gradientFlow 4s ease infinite; /* 动画效果 */
+}
+
+/* 流动渐变的动画 */
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}

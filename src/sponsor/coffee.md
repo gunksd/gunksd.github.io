@@ -12,3 +12,6 @@ tag: 给我来杯咖啡吧！
 
 <img src="./address.jpg" alt="address" width="300"/>
 
+微信赞赏码：
+
+<img src="./weixin.jpg" alt="微信" width="300"/>
