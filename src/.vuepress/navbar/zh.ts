@@ -27,6 +27,10 @@ export const zhNavbar = navbar([
         text: "Vue",
         link: "/projects/Vue.md",
       },
+      {
+        text: "Personal website",
+        link: "/projects/website.md",
+      },
     ],
   },
   {

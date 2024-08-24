@@ -9,6 +9,7 @@ order: 3
 author: Awan
 # 设置写作时间
 date: 2024-08-19
+tag: Polyhedra
 ---
 # 跨链赛道冉冉新星:Polyhedra Network
 
