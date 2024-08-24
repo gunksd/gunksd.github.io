@@ -24,9 +24,14 @@ date: 2024-08-24
 - **🛀 多功能页面**：文章附有打印按钮，支持全屏查看，还有图片查看器。
 - **🐶 多设备支持**：适配手机，pad，多设备支持，给您良好体验。
 
-## 🛠 配置
+## 🛠 配置 🎨
 
-你可以通过修改 `docs/.vuepress/theme.ts` 文件和其他文件来定制化你的博客，包括标题、描述、导航栏、主题设置等。🎨
+你可以通过：
+- 修改 `/.vuepress/theme.ts` 文件来定制主题和插件选项。
+- 修改 `/.vuepress/styles` 里面的文件来添加你喜欢的css样式，包括主题颜色也是在这里。
+- 修改 `/.vuepress/navbar` 来进行首页横幅导航选项的随心定制。 
+- 修改 `/.vuepress/sidebar` 来修改侧边栏，包括添加或者删减类别之类的。
+- 此外，在vuepress中root预设的非html/md就是` .vuepress/public/` 项目所需要的图片都可以放在这里。
 
 ## 📖 内容
 
@@ -42,6 +47,6 @@ date: 2024-08-24
 
 ## 📜 许可证
 
-本项目使用 MIT 许可证，详情请参见 [LICENSE](/LICENSE) 文件。📝
+本项目使用 MIT 许可证，详情请参见 [LICENSE](https://github.com/gunksd/gunksd.github.io/blob/main/LICENSE) 文件。📝
 
 ### Github地址：[https://github.com/gunksd/gunksd.github.io](https://github.com/gunksd/gunksd.github.io)
