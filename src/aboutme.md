@@ -40,7 +40,7 @@ I'm a IT worker from China with a keen interest in computer science, literature,
 ## What I'm Working On
 - Building a student employment recommendation system using deep learning.（一个基于深度学习的大学生就业推荐系统）
 - At the same time, a project for a drone-based wildfire prevention and detection system is underway.（无人机火灾防治系统）
-- Crafting innovative auction smart contracts on Ethereum for one Hackathon.（一个备战黑客松的创新型拍卖项目）
+- Crafting innovative auction smart contracts on Ethereum for one Hackathon.（一个基于传统英式拍卖的创新型拍卖项目）
 
 ## *We are making the world a better place by harnessing the infinite possibilities of code to drive change.* 
 
