@@ -9,7 +9,7 @@ export const zhNavbar = navbar([
   { 
     text: "文章", 
     icon: "shrimp", 
-    link: "/projects/Rooch.md" 
+    link: "/projects/website.md" 
   },
   {
     text: "项目",
