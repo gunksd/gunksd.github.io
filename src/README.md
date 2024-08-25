@@ -13,7 +13,7 @@ tagline: 起舞弄清影，何似在人间。
 actions:
   - text: 开始阅读
     icon: lightbulb
-    link: /projects/Rooch.md
+    link: /projects/website.md
     type: primary
 
   - text: 关于我
