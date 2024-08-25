@@ -49,7 +49,7 @@ export default hopeTheme({
 
   encrypt: {
     config: {
-      "/projects/Rooch.html": ["2580"],
+      "/projects/website.html": ["12345678"],
     },
   },
 

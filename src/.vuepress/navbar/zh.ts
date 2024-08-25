@@ -16,6 +16,10 @@ export const zhNavbar = navbar([
     icon: "diagram-project", 
     children: [
       {
+        text: "Personal website",
+        link: "/projects/website.md",
+      },
+      {
         text: "Pocket-Monsters-On-Rooch",
         link: "/projects/Rooch.md",
       },
@@ -27,10 +31,7 @@ export const zhNavbar = navbar([
         text: "Vue",
         link: "/projects/Vue.md",
       },
-      {
-        text: "Personal website",
-        link: "/projects/website.md",
-      },
+      
     ],
   },
   {
