@@ -13,11 +13,11 @@ date: 2024-08-18
 ---
 # SecureFlow
 通过限流机制确保系统的安全性，同时奖励用户的积极参与。
-## 用例名称和摘要
+### 用例名称和摘要
 
 **SecureFlow** 是一个用于智能合约的限流与奖励机制Aspect，旨在增强Web3应用的安全性。通过检测和阻止恶意或异常频繁的交易请求，SecureFlow可以防止潜在的攻击，同时为积极贡献的用户提供奖励。该项目在Artela生态系统中实现为一个Aspect，旨在保护用户资产并提高平台的安全性。
 
-## 解决方案概述的问题及解决方式
+### 解决方案概述的问题及解决方式
 
 ### 问题
 
@@ -53,11 +53,11 @@ date: 2024-08-18
 3. **奖励机制**：
    - 动态计算奖励金额，基于事件严重性在总奖励池中的占比。
 
-## 这个Aspect为Artela生态系统带来的价值
+### 这个Aspect为Artela生态系统带来的价值
 
 **SecureFlow** 为Artela生态系统带来了以下价值：
 - **增强安全性**：通过限流机制有效减少恶意操作和潜在攻击。
 - **激励机制**：鼓励用户积极参与平台的安全维护，提升整体生态的安全性和稳定性。
 - **灵活性和适应性**：可根据不同的应用场景调整配置参数，适应多种安全需求。
 
-## Github地址：[https://github.com/gunksd/SecureFlow](https://github.com/gunksd/SecureFlow)
+#### Github地址：[https://github.com/gunksd/SecureFlow](https://github.com/gunksd/SecureFlow)
