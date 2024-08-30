@@ -1,6 +1,6 @@
 # Awan's Personal Blog 🚀
 
-欢迎来到我的个人博客，这是一个基于 [VuePress](https://vuepress.vuejs.org/) 和 [vuepress-theme-hope](https://vuepress-theme-hope.github.io/v2/) 的静态网站，部署在 GitHub Pages 上。💻
+欢迎来到我的个人博客，这是一个基于 [VuePress](https://vuepress.vuejs.org/) 和 [vuepress-theme-hope](https://theme-hope.vuejs.press/zh/) 的静态网站，部署在 GitHub Pages 上。💻
 
 ## ✨ 特性
 
