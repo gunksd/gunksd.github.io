@@ -14,7 +14,7 @@ date: 2024-08-18
 
 # Hello, I'm [Awan]! 👋
 
-你好！我是Awan! 我是一名中国的IT工作者，我热爱计算机科学，喜欢文学，并且很热衷于富有创新性的写作。我希望能够探索科技与人文的交汇可能，用感性的力量为理性的发展更进一步，在这场盛大的交响乐中促进新的叙事与解决方案的诞生。
+你好！我是Awan! 我是一名来自中国的IT工作者，同时也是一名大三学生。计算机科学是我的热爱，文学是我的灵魂，而创新写作则是我表达自我的方式。我渴望探索科技与人文的交汇点，用感性的笔触为理性的世界增添色彩，在这场科技与艺术的交响乐中，谱写出新的叙事篇章，创造出独特的解决方案。
 ____________________________________________________________________________________________________________
 I'm a IT worker from China with a keen interest in computer science, literature, and creative writing. I enjoy exploring the intersection of technology and storytelling to develop innovative solutions and compelling content.
 
