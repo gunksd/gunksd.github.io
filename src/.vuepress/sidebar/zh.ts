@@ -35,6 +35,13 @@ export const zhSidebar = sidebar({
           children: "structure",
           collapsible: true
         },
+        {
+          text: "数据挖掘与处理",
+          icon: "fingerprint",
+          prefix: "Datamining/",
+          children: "structure",
+          collapsible: true
+        },
         // 这里可以继续添加其他子分类或子项
       ],
       collapsible: true,
