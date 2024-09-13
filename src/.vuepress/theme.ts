@@ -1,5 +1,4 @@
 import { hopeTheme } from "vuepress-theme-hope";
-
 import { zhNavbar } from "./navbar/index.js";
 import { zhSidebar } from "./sidebar/index.js";
 
@@ -55,6 +54,9 @@ export default hopeTheme({
 
   plugins: {
 
+    mdEnhance: {
+      revealJs: true,
+    },
 
     comment: {
       provider: "Giscus",
@@ -63,7 +65,7 @@ export default hopeTheme({
       category: "Announcements",
       categoryId: "DIC_kwDOMlspd84Chyvi",
     },
-
+    
     components: {
       components: ["Badge", "VPCard"],
     },
@@ -113,6 +115,8 @@ export default hopeTheme({
       vuePlayground: true,
       
     },
+    
+    
       // Install chart.js before enabling it
       // chart: true,
 
