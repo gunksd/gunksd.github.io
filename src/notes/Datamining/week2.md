@@ -54,4 +54,13 @@ ps：另两种见PPT
 ![PCA](/notes-image/PCA过程2.png)
 **==注：解答最后答案是错的，正确答案是[-3,-1.0,3,1]==**
 
-## 此外还有一些简单概念，例如3-4-5规则这类，详见PPT
+ps：此外还有一些简单概念，例如3-4-5规则这类，详见PPT
+
+## 四.关联规则挖掘
+### 1.Apriori算法：
+- 步骤：
+![Apriori算法](/notes-image/Apriori算法.png)
+
+- 例子：
+![Apriori算法例子](/notes-image/Apriori算法例子.png)
+![Apriori算法例子](/notes-image/Apriori算法例子2.png)

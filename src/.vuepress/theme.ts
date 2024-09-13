@@ -54,10 +54,6 @@ export default hopeTheme({
 
   plugins: {
 
-    mdEnhance: {
-      revealJs: true,
-    },
-
     comment: {
       provider: "Giscus",
       repo: "gunksd/Giscus",
@@ -72,6 +68,7 @@ export default hopeTheme({
 
     // All features are enabled for demo, only preserve features you need here
     mdEnhance: {
+      revealJs: true,
       align: true,
       attrs: true,
       chart: true,
