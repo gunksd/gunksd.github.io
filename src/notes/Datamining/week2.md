@@ -65,3 +65,5 @@ ps：此外还有一些简单概念，例如3-4-5规则这类，详见PPT
 ![Apriori算法例子](/notes-image/Apriori算法例子.png)
 ![Apriori算法例子](/notes-image/Apriori算法例子2.png)
 ![Apriori算法例子](/notes-image/Apriori算法例子3.png)
+
+### FP growth算法：
