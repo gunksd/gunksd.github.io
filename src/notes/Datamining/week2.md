@@ -1,6 +1,6 @@
 ---
 # 这是文章的标题
-title: 第二周
+title: 第二周（三类大题）
 # 这是页面的图标
 icon: asterisk
 # 这是侧边栏的顺序
@@ -66,4 +66,21 @@ ps：此外还有一些简单概念，例如3-4-5规则这类，详见PPT
 ![Apriori算法例子](/notes-image/Apriori算法例子2.png)
 ![Apriori算法例子](/notes-image/Apriori算法例子3.png)
 
-### FP growth算法：
+### 2.FP Growth算法：
+一.FP-growth算法发现频繁项集的过程：
+(1)构建FP树；
+(2)从FP树中挖掘频繁项集。
+`FP-Tree`：将事务数据表中的各个事务数据项按照==支持度==计数排序后，把每个事
+务中的数据项按支持度计数的降序依次插入到一棵以`NULL`为根结点的树中，
+同时在每个结点处记录该结点出现的支持度。
+`条件模式基`：包含在FP-Tree中与后缀模式一起出现的前缀路径的集合，也就是
+同一个频繁项在FP树中的所有节点的祖先路径的集合。
+`条件树`：将条件模式基按照FP-Tree的构造原则形成的一个新的FP-Tree子树。
+二.例子：
+![FP_growth算法例子](/notes-image/FP_growth1.png)
+步骤一：
+![FP_growth算法例子](/notes-image/FP_growth2.png)
+步骤二：
+![FP_growth算法例子](/notes-image/FP_growth3.png)
+步骤三：
+![FP_growth算法例子](/notes-image/FP_growth4.png)
