@@ -24,7 +24,7 @@ export const zhSidebar = sidebar({
         
         {
           text: "Django",
-          icon: "python",
+          icon: "desktop",
           prefix: "Django/",
           children: "structure",
           collapsible: true
