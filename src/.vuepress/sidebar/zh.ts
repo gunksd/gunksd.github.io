@@ -21,6 +21,14 @@ export const zhSidebar = sidebar({
           children: "structure",
           collapsible: true
         },
+        
+        {
+          text: "Django",
+          icon: "python",
+          prefix: "Django/",
+          children: "structure",
+          collapsible: true
+        },
         // 这里可以继续添加其他子分类或子项
       ],
       collapsible: true,
