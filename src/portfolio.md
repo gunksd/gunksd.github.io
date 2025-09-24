@@ -87,7 +87,6 @@ footer: false
 
 亘古寂寥的宇宙，又有谁会知晓，很久很久以前，有一颗水蓝色的星球，和星球上的那个【他】呢。
 
-<center>———— 望我不会成为【他】。</center>
-
+<div style="text-align: center;">———— 望我不会成为【他】。</div>
 　　
 
