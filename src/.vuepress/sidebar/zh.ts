@@ -7,7 +7,7 @@ export const zhSidebar = sidebar({
       icon: "laptop-code",
       prefix: "projects/",
       children: "structure",
-      collapsible: true
+      collapsible: true,
     },
     {
       text: "笔记",
@@ -19,9 +19,16 @@ export const zhSidebar = sidebar({
           icon: "network-wired",
           prefix: "network/",
           children: "structure",
-          collapsible: true
+          collapsible: true,
         },
-        
+        {
+          text: "HTML/CSS/JS 入门",
+          icon: "code",
+          prefix: "HCJ/",
+          children: "structure",
+          collapsible: true,
+        },
+
         // 这里可以继续添加其他子分类或子项
       ],
       collapsible: true,
@@ -31,14 +38,14 @@ export const zhSidebar = sidebar({
       icon: "sack-dollar",
       prefix: "web3/",
       children: "structure",
-      collapsible: true
+      collapsible: true,
     },
     {
       text: "随笔",
       icon: "pencil",
       prefix: "poets/",
       children: "structure",
-      collapsible: true
+      collapsible: true,
     },
     {
       text: "关于我",

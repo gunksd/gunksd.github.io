@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HCJ</title>
+    <style>
+      /*整个页面body*/
+      body {
+        background-color:#f0f2f5;
+        font-family:Arial, sans-serif;
+        margin: 0;
+      }
+      /*#id id选择器*/
+      #app {
+        width:420px;
+        margin: 60px auto;  /*是让这个卡片整个居中，而不是里面的内容*/
+        text-align: center;
+        background-color: orange;
+        padding: 32px;
+        border-radius: 12px;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+      }
+      /*h1 标签选择器*/
+      h1 {
+        color: #2c3e50;
+        font-size: 24px;
+        margin-top: 0;
+        margin-bottom: 20px;
+      }
+      .input-area {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 24px;
+      }
+      input {
+        flex: 1;
+        padding: 10px 12px;
+        font-size: 14px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        outline: none;
+      }
+      button {
+        padding: 8px 16px;
+        font-size: 14px;
+        cursor: pointer;
+        background-color: #3498db;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        transition: background-color 0.2s; /*平滑过渡*/
+      }
+      button:hover {
+        background-color: #2980b6;
+      }
+      input:hover {
+        border-color:#3498bd;
+      }
+      ul {
+        list-style: decimal;
+        padding: 20px;
+        margin: 0 auto;
+        width: fit-content; /*宽度收缩到内容本身*/
+      }
+      li {
+        padding: 12px 0;
+        border-bottom: 1px solid #f0f0f0;
+        color: #444;
+        font-size: 15px;
+        text-align: left;
+      }
+      li:last-child {
+        border-bottom: none; /*最后一个不显示分割线*/
+      }
+      li.done {
+        text-decoration: line-through;
+        color: #aaa;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <h1>My todo list</h1>
+      <div class="input-area">
+        <input type="text" placeholder="what's today to do?">
+        <button>add</button>
+      </div>
+      <ul id="todo-list">
+        <li>learn html</li>
+        <li>learn css</li>
+        <li>learn javascript</li>
+      </ul>
+    </div>
+    <script>
+      const input = document.querySelector("input")
+      const addBtn = document.querySelector("button")
+      const todolist = document.querySelector("#todo-list")
+
+      let todos = JSON.parse(localStorage.getItem("todos")) || []  //从localStorage读，没有就用空数组
+
+      function render() {
+        todolist.innerHTML = ""
+
+        todos.forEach(function (todo) {
+          const li = document.createElement("li") //创建元素
+          li.textContent = todo.text  //设置文字
+          if (todo.done) li.classList.add("done")
+
+          li.addEventListener("click", function() {
+            todo.done = !todo.done
+            save()
+            render()
+          })
+          todolist.appendChild(li) //插入到列表末尾，才能显示
+        })
+      }
+
+      function save() {
+        localStorage.setItem("todos", JSON.stringify(todos))
+      }
+
+      function addTodo() {
+        const text = input.value.trim()  //.trim()去掉首尾空格
+        if (text === "") return
+
+        todos.push({ text: text, done: false })
+        save()
+        render()
+        input.value = ""  //清空输入框
+      }
+
+      addBtn.addEventListener("click", function() {
+        addTodo()
+      })
+
+      input.addEventListener("keydown", function(event) {
+        if (event.key === "Enter") {
+          addTodo()
+        }
+      })
+
+      render() //页面加载时立即渲染已保存的数据
+    </script>
+  </body>
+</html>
