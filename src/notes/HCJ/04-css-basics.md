@@ -1,6 +1,6 @@
 ---
 title: CSS 基础语法
-icon: css3
+icon: brush
 order: 4
 tag: [CSS]
 ---

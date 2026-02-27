@@ -1,6 +1,6 @@
 ---
 title: 回车提交与完成切换
-icon: js
+icon: terminal
 order: 12
 tag: [JavaScript]
 ---

@@ -1,6 +1,6 @@
 ---
 title: 获取和操作 DOM 元素
-icon: js
+icon: terminal
 order: 9
 tag: [JavaScript]
 ---

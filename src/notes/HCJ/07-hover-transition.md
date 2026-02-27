@@ -1,6 +1,6 @@
 ---
 title: 悬停效果与过渡动画
-icon: mouse-pointer
+icon: hand-pointer
 order: 7
 tag: [CSS]
 ---

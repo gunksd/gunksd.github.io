@@ -1,6 +1,6 @@
 ---
 title: 常用 HTML 标签
-icon: html5
+icon: file-code
 order: 2
 tag: [HTML]
 ---

@@ -1,6 +1,6 @@
 ---
 title: 事件监听 addEventListener
-icon: js
+icon: terminal
 order: 10
 tag: [JavaScript]
 ---

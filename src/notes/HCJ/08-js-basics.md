@@ -1,6 +1,6 @@
 ---
 title: JavaScript 基础入门
-icon: js
+icon: terminal
 order: 8
 tag: [JavaScript]
 ---
